@@ -3,62 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>標題層級範例 - 科技新聞社群實驗網</title>
+    <title>實驗首頁</title>
     <style>
-        /* 簡單樣式區分不同層級大小 */
-        body { font-family: sans-serif; padding: 15px; }
-        h1 { font-size: 2.5em; margin-bottom: 0.5em; }
-        h2 { font-size: 2em; margin-bottom: 0.5em; }
-        h3 { font-size: 1.75em; margin-bottom: 0.5em; }
-        h4 { font-size: 1.5em; margin-bottom: 0.5em; }
-        h5 { font-size: 1.25em; margin-bottom: 0.5em; }
-        h6 { font-size: 1em; color: #555; margin-bottom: 0.5em; }
-    </style>
-</head>
-<body>
-
-    <h1>科技新聞社群實驗網</h1>
-
-    <h2>最新科技新聞</h2>
-
-    <h3>人工智慧發展</h3>
-
-    <h4>大型語言模型最新突破</h4>
-
-    <h5>模型訓練資料來源分析</h5>
-</body>
-    <style>
+        /* --- 全局與基礎樣式 --- */
         body {
-            font-family: sans-serif;
-            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 更現代的字體棧 */
+            margin: 0; /* 移除預設邊距 */
+            padding: 0; /* 移除預設內距 */
+            background-color: #FFFFFF; /* 主要背景色：白色 */
+            color: #333; /* 預設文字顏色 */
+            display: flex; /* 使用 Flexbox 佈局 */
+            flex-direction: column; /* 垂直排列子元素 */
+            justify-content: center; /* 垂直居中 (搭配 min-height) */
+            align-items: center; /* 水平居中 */
+            min-height: 100vh; /* 至少佔滿整個視窗高度 */
+            text-align: center; /* 預設文字居中 */
+            box-sizing: border-box; /* 讓 padding 不會撐大元素 */
         }
+
+        /* --- 容器 (為了更好的內容控制) --- */
+        .content-wrapper {
+            padding: 20px; /* 在內容周圍增加內距 */
+            max-width: 800px; /* 限制最大寬度 */
+            width: 90%; /* 響應式寬度 */
+        }
+
+        /* --- 標題 H1 --- */
+        h1 {
+            color: #FBBA59; /* 標題顏色：中橘色/金色 */
+            margin-bottom: 1em; /* 與下方元素的間距 */
+            font-size: 2.5em; /* 調整字體大小 */
+        }
+
+        /* --- 段落 P --- */
+        p {
+            margin-bottom: 1.5em; /* 與下方按鈕的間距 */
+            font-size: 1.1em;
+            color: #555; /* 稍淺的文字顏色 */
+        }
+
+        /* --- 按鈕連結 .button-link --- */
         .button-link {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px 5px;
-            border: 1px solid #ccc;
-            background-color: #f0f0f0;
-            color: #333;
-            text-decoration: none;
-            border-radius: 5px;
-            cursor: pointer;
+            display: inline-block; /* 行內區塊元素，可以設定宽高 */
+            padding: 12px 25px; /* 按鈕內距 (上下 左右) */
+            margin: 8px 8px; /* 按鈕間距 */
+            background-color: #FFA500; /* 按鈕背景色：亮橘色 */
+            color: #FFFFFF; /* 按鈕文字顏色：白色 */
+            border: none; /* 移除邊框 */
+            border-radius: 8px; /* 圓角 */
+            text-decoration: none; /* 移除底線 */
+            font-weight: bold; /* 粗體文字 */
+            cursor: pointer; /* 滑鼠指標改為手形 */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* 平滑過渡效果 */
+            font-size: 1em;
         }
+
+        /* --- 按鈕連結滑過 (Hover) 效果 --- */
         .button-link:hover {
-            background-color: #e0e0e0;
+            background-color: #FBBA59; /* 滑過時背景色：中橘色/金色 */
+            transform: translateY(-2px); /* 輕微向上移動 */
         }
+
+        /* --- 響應式設計：小螢幕 (< 600px) --- */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em; /* 在小螢幕上縮小標題 */
+            }
+
+            p {
+                font-size: 1em; /* 在小螢幕上縮小段落文字 */
+            }
+
+            .button-link {
+                display: block; /* 讓按鈕變成區塊元素，各佔一行 */
+                width: 80%; /* 設定寬度 */
+                max-width: 280px; /* 最大寬度限制 */
+                margin: 15px auto; /* 上下間距 15px，左右自動 (實現居中) */
+                padding: 15px 20px; /* 調整內距 */
+            }
+        }
+
+        /* --- 響應式設計：非常小的螢幕 (< 360px) --- */
+         @media (max-width: 360px) {
+             h1 {
+                 font-size: 1.8em;
+             }
+             .button-link {
+                 width: 90%; /* 在非常小的螢幕上再寬一點 */
+             }
+         }
+
     </style>
 </head>
 <body>
 
-    <p>請選擇您想前往的頁面，!!!：</p>
-
-    <a href="news.html" class="button-link">新聞</a>
-    <a href="community.html" class="button-link">社群</a>
+    <div class="content-wrapper">
+        <h1>實驗首頁</h1>
+        <p>請選擇您想前往的頁面：</p>
+        <a href="news.html" class="button-link">新聞</a>
+        <a href="community.html" class="button-link">社群</a>
+    </div>
 
 </body>
 </html>
